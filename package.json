@@ -11,5 +11,11 @@
   "license": "ISC",
   "dependencies": {
     "ec.appcms-websitebuilder": "git+ssh://git@stash.entrecode.de:7999/cms/ec.appcms-websitebuilder.git"
+  },
+  "scripts": {
+    "build": "node build.js"
+  },
+  "config": {
+    "datamanager": "https://datamanager.entrecode.de/api/b95d1dd8/"
   }
 }

@@ -1,0 +1,50 @@
+<!-- Header
+    ============================================= -->
+<header id="header" class="full-header transparent-header dark static-sticky" data-sticky-class="not-dark" data-sticky-offset="full" data-sticky-offset-negative="100">
+
+    <div id="header-wrap">
+
+        <div class="container clearfix">
+
+            <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+            <!--
+
+            Logo
+            ========================…
+
+            -->
+
+            <div id="logo">
+
+                <a class="standard-logo" data-dark-logo="img/logo/logo.png" href="index.html">
+                    <img alt="Canvas Logo" src="img/logo/logo.png"></img>
+                </a>
+
+
+            </div>
+            <!--
+
+             #logo end
+
+            -->
+
+            <!-- Hauptnavigationsleiste Start
+            ============================================= -->
+            <nav id="primary-menu">
+
+                <ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
+                {{#each nav}}
+                    <li><a href="#" data-href="{{href}}"><div style="text-transform: uppercase;">{{title}}</div></a></li>
+                {{/each}}
+                </ul>
+
+                <!-- Until appsite supports it, disabled 	<div id="side-panel-trigger"><a href="#"><i class="icon-reorder"></i></a></div> -->
+
+            </nav><!-- Hauptnavigationsleiste Ende -->
+
+        </div>
+
+    </div>
+
+</header><!-- #header end -->

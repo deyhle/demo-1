@@ -1,0 +1,118 @@
+<!-- News
+    ============================================= -->
+
+<section id="news">
+
+  <div class="content-wrap">
+
+    <div class="container clearfix">
+
+      <!-- Post Content
+      ============================================= -->
+      <div class="postcontent nobottommargin clearfix">
+
+        <div class="heading-block">
+          <h2 >MY NEWS</h2>
+        </div>
+
+        <!-- Posts
+        ============================================= -->
+        <div id="posts" class="post-grid post-masonry grid-3 clearfix">
+            {{#each _embedded.6f50736a:news}}
+              <div class="entry clearfix">
+                <div class="entry-image">
+                  <img class="image_fade" src="{{teaserImage}}" alt="Standard Post with Image">
+                </div>
+                <div class="entry-title">
+                  <h2>{{teaserTitle}}</h2>
+                </div>
+                <ul class="entry-meta clearfix">
+                  <li><i class="icon-calendar3"></i>{{date}}</li>
+                </ul>
+                <div class="entry-content">
+                    {{teaserText}}
+                  <a href="#" class="more-link" data-toggle="modal" data-target=".news-modal-{{@index}}">Weiterlesen</a>
+
+                  <!-- MODAL START -->
+                  <div class="modal fade news-modal-{{@index}}" tabindex="-{{@index}}" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-body">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">{{mainTitle}}</h4>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row">
+                              <div class="col-md-6">
+
+                                <img src="{{mainImage}}"/>
+                              </div>
+                              <div class="col-md-6">
+                                  {{{mainText}}}
+                              </div></div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- MODAL END -->
+
+                </div>
+              </div>
+            {{/each}}
+
+        </div><!-- #posts end -->
+
+        <script type="text/javascript">
+
+          jQuery(window).load(function(){
+
+            var $container = $('#posts');
+
+            $container.isotope({ transitionDuration: '0.65s' });
+
+            $(window).resize(function() {
+              $container.isotope('layout');
+            });
+
+          });
+
+        </script>
+
+      </div><!-- .postcontent end -->
+
+      <!-- Sidebar
+      ============================================= -->
+      <div class="sidebar nobottommargin col_last clearfix">
+        <div class="sidebar-widgets-wrap">
+
+          <div class="widget widget-twitter-feed clearfix">
+            <div class="heading-block">
+
+              <h2><span>Like Us On Facebook</span></h2></div>
+            <ul id="sidebar-twitter-list-1" class="iconlist">
+              <li></li>
+            </ul>
+
+            <div class="fb-page" data-href="https://www.facebook.com/MYGYM.at" data-width="445" data-height="530" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
+
+          </div>
+
+          <!--<div class="widget clearfix">
+
+              <h4>Deine Fitnessmotivation des Tages</h4>
+              <div id="flickr-widget" class="flickr-feed masonry-thumbs" data-id="49773049@N07" data-count="16" data-type="group" data-lightbox="gallery"></div>
+
+          </div>-->
+
+        </div>
+
+      </div><!-- .sidebar end -->
+
+    </div>
+
+  </div>
+
+</section><!-- #news end -->

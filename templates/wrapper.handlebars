@@ -88,10 +88,10 @@
 <!-- Document Wrapper
 ============================================= -->
 <div id="wrapper" class="clearfix">
-   <!-- iterate through partials here -->
+    <!-- iterate through partials here -->
 
   {{#each partials}}
-    {{> (name)}}
+    {{> (lookup . 'name') }}
   {{/each}}
 
 

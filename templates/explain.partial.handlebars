@@ -3,51 +3,17 @@
 <section id="wearemygym">
   <div class="content-wrap" style="margin-bottom:0px;">
     <div class="container clearfix">
-      <div class="col_one_fourth nobottommargin">
-        <div class="feature-box fbox-center fbox-light fbox-effect nobottomborder">
-          <div class="fbox-icon">
-            <a href="#membership"><i class="i-alt noborder icon-world"></i></a>
+        {{#each _embedded.6f50736a:explain}}
+          <div class="col_one_fourth nobottommargin">
+            <div class="feature-box fbox-center fbox-light fbox-effect nobottomborder">
+              <div class="fbox-icon">
+                <a href="{{href}}"><i class="i-alt noborder icon-{{icon}}"></i></a>
+              </div>
+              <h3>{{title}}<span class="subtitle">{{subtitle}}</span></h3>
+            </div>
           </div>
-          <h3>Werde Mitglied<span class="subtitle">Starte online in die Welt von MY GYM!</span></h3>
-        </div>
-      </div>
-
-      <div class="col_one_fourth nobottommargin">
-        <div class="feature-box fbox-center fbox-light fbox-effect nobottomborder">
-          <div class="fbox-icon">
-            <a href="#specials"><i class="i-alt noborder icon-wallet"></i></a>
-          </div>
-          <h3>Buche Specials<span class="subtitle">Werte hier Dein Abo mit Special auf.</span></h3>
-        </div>
-      </div>
-
-      <div class="col_one_fourth nobottommargin">
-        <div class="feature-box fbox-center fbox-light fbox-effect nobottomborder">
-          <div class="fbox-icon">
-            <a href="http://www.mygym.appsite.de"><i class="i-alt noborder icon-users"></i></a>
-          </div>
-          <h3>Logge Dich ein<span class="subtitle">Verwalte Dich selbst in der MY GYM Appsite.</span></h3>
-        </div>
-      </div>
-
-      <div class="col_one_fourth nobottommargin col_last">
-        <div class="feature-box fbox-center fbox-light fbox-effect nobottomborder">
-          <div class="fbox-icon">
-            <a href="#clubvr"><i class="i-alt noborder icon-eye-open"></i></a>
-          </div>
-          <h3>VR-Rundgang<span class="subtitle">Sehe Dir unseren virtual reality Rundgang an.</span></h3>
-        </div>
-      </div>
-
+        {{/each}}
       <div class="clear"></div>
-      <div class="line bottommargin-lg"></div>
-
-      <div class="col_two_fifth nobottommargin">
-        <a href="https://www.youtube.com/watch?v=5_lCL_K-dBE" data-lightbox="iframe">
-          <img src="img/wearemygym.jpg" alt="Image">
-          <span class="i-overlay"><img src="images/icons/play.png" alt="Play"></span>
-        </a>
-      </div>
     </div>
   </div>
 </section>

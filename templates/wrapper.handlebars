@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="de-DE">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
   <!-- Stylesheets
   ============================================= -->
     {{#each _embedded.b95d1dd8:stylesheet}}
-      <link rel="stylesheet" type="text/css" href="{{href}}" />
+      <link rel="stylesheet" type="text/css" href="{{href}}"/>
     {{/each}}
 
   <!--[if lt IE 9]>
@@ -17,7 +17,8 @@
   <!-- Externes Javascript
   ============================================= -->
     {{#each _embedded.b95d1dd8:script}}
-        {{#unless footer}}<script type="text/javascript"{{#if src}} src="{{src}}"{{/if}}>{{{inlineScript}}}</script>{{/unless}}
+        {{#unless footer}}
+          <script type="text/javascript"{{#if src}} src="{{src}}"{{/if}}>{{{inlineScript}}}</script>{{/unless}}
     {{/each}}
 
   <!-- Titel der Webseite
@@ -30,74 +31,76 @@
 
 <div class="body-overlay"></div>
 
+<!-- Header
+    ============================================= -->
+<header id="header" class="full-header transparent-header dark static-sticky" data-sticky-class="not-dark"
+        data-sticky-offset="full" data-sticky-offset-negative="100">
 
-<!-- Seitenpanel mit Kontaktinfo und Social Networking
-============================================= -->
-<div id="side-panel" class="dark">
+  <div id="header-wrap">
 
-  <div id="side-panel-trigger-close"><a href="#"><i class="icon-line-cross"></i></a></div>
+    <div class="container clearfix">
 
-  <div class="side-panel-wrap">
+      <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
-    <div class="widget widget_links clearfix">
+      <!--
 
-      <h4>Login für Mitglieder</h4>
+      Logo
+      ========================…
 
-      <div class="acctitle"><i class="acc-closed icon-lock3"></i><i class="acc-open icon-unlock"></i>Login zur MY GYM Appsite</div>
-      <div class="acc_content clearfix">
-        <form id="login-form" name="login-form" class="nobottommargin" action="#" method="post">
-          <div class="col_full">
-            <label for="login-form-username">Nutzername:</label>
-            <input type="text" id="login-form-username" name="login-form-username" value="" class="form-control" />
-          </div>
+      -->
 
-          <div class="col_full">
-            <label for="login-form-password">Passwort:</label>
-            <input type="password" id="login-form-password" name="login-form-password" value="" class="form-control" />
-          </div>
-
-          <div class="col_full nobottommargin">
-            <button class="button button-3d button-black nomargin" id="login-form-submit" name="login-form-submit" value="login">Anmelden</button>
-          </div>
-        </form>
+      <div id="logo">
+        <a class="standard-logo" href="index.html">
+          <img alt="Canvas Logo" src="{{logo}}"></img>
+        </a>
       </div>
+      <!--
 
-    </div>
+       #logo end
 
-    <div class="widget quick-contact-widget clearfix">
+      -->
 
-      <h4>Soziale Netzwerke</h4>
+      <!-- Hauptnavigationsleiste Start
+      ============================================= -->
+      <nav id="primary-menu">
 
-      <a href="https://www.facebook.com/MYGYM.at?fref=ts" class="social-icon si-small si-colored si-facebook" title="Facebook">
-        <i class="icon-facebook"></i>
-        <i class="icon-facebook"></i>
-      </a>
-      <a href="https://plus.google.com/105070884320408794603/posts" class="social-icon si-small si-colored si-gplus" title="Google Plus">
-        <i class="icon-gplus"></i>
-        <i class="icon-gplus"></i>
-      </a>
+        <ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
+            {{#each partials}}
+              <li><a href="#" data-href="anchor_{{name}}">
+                <div style="text-transform: uppercase;">{{navTitle}}</div>
+              </a></li>
+            {{/each}}
+        </ul>
+
+        <!-- Until appsite supports it, disabled 	<div id="side-panel-trigger"><a href="#"><i class="icon-reorder"></i></a></div> -->
+
+      </nav>
+      <!-- Hauptnavigationsleiste Ende -->
 
     </div>
 
   </div>
 
-</div>
-
+</header>
+<!-- #header end -->
 
 
 <!-- Document Wrapper
 ============================================= -->
 <div id="wrapper" class="clearfix">
-    <!-- iterate through partials here -->
+  <!-- iterate through partials here -->
 
-  {{#each partials}}
-    {{> (lookup . 'name') }}
-  {{/each}}
+    {{#each partials}}
+      <div id="anchor_{{name}}">
+          {{> (lookup . 'name') }}
+      </div>
+    {{/each}}
 
   <div class="content-wrap nopadding"> <!-- start nopadding -->
 
 
-  </div><!-- #wrapper end -->
+  </div>
+  <!-- #wrapper end -->
 
   <!-- Go To Top
   ============================================= -->
@@ -106,8 +109,109 @@
   <!-- Footer Scripts
   ============================================= -->
     {{#each _embedded.b95d1dd8:script}}
-        {{#if footer}}<script type="text/javascript"{{#if src}} src="{{src}}"{{/if}}>{{{inlineScript}}}</script>{{/if}}
+        {{#if footer}}
+          <script type="text/javascript"{{#if src}} src="{{src}}"{{/if}}>{{{inlineScript}}}</script>{{/if}}
     {{/each}}
 
+</div>
+<!-- Footer
+============================================= -->
+<footer id="footer" class="noborder purplebg whitetext">
+
+  <div class="container center">
+    <div class="footer-widgets-wrap">
+
+      <div class="row divcenter clearfix">
+
+        <div class="col-md-4">
+
+          <div class="widget clearfix">
+            <h4 class="whitetext">Menü</h4>
+
+            <ul class="list-unstyled footer-site-links nobottommargin">
+              <li><a href="#"  data-toggle="modal" data-target=".modal-impressum"><div>IMPRESSUM</div></a></li>
+
+              <!-- MODAL IMPRESSUM -->
+              <div class="modal fade modal-impressum" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-body">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Impressum</h4>
+                      </div>
+                      <div class="modal-body purplebg">
+                        <p> <b>MY GYM - Gym Fitness GmbH </br>
+                          Josef-Lindner-Straße 8a </br>
+                          5071 Wals bei Salzburg </br> </b>
+                          </br>
+                          Telefon: +43/662/243153 </br>
+                          </br>
+                          <a href="mailto:office@mygym.at"> office@mygym.at</a></br>
+                          <a href="http://www.mygym.at">www.mygym.at</a></br>
+                          </br>
+                          UID: ATU66688015</br>
+                          Firmenbuch: FN 367451w, Landesgericht Salzburg</br>
+                          DVR: 4008864</br>
+                          </br>
+                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKkAAAAXCAIAAAD/d/h9AAADTElEQVRoge2aPY7yMBCG9wa0dFwA5Rx8VW4AEg1CSKk4AYiahiaHQAiJQ2y0N3AOsSUoijRfMWHixJOxIQY2glcRcsx4/PNkxg67X/FH76qvOI7VR++ne9jP5gu8HjQmv6LRWsfsOKkOzV1Whb3LGj1o5uTWr3/dm7ULs561ZH12UfW49xUct+oJbu+Y2vuyN9NALX+y35pmylgjq1urGeuK7VQejHtzc4ncd5O/KTt7a6W5FrKZY183FaxO2jeXh91F+WdvNaOyL/ZehuRiICwRq99/ofXyaJZHoVJqtd5Yr5exb2/vzuxp7FnLc69vvTya4SMynkytF8PeGkZsWfhKdsIuvYt/M+5lDwInx/myj4gwF9RlOMijMI/Cy3Bw7vWzUZBHIXLC+mwUEFT8NhsF516fGuJtjX02CmC3xIsM2rLvulgAL1Q2CgAAABA5lrNRcBkOqF5docJuCQCQJudeH/ZbvaHOPo9CqIpsOsO+PSfTw19jf+71IU0AAPZbeg5gtyR+etwT+6KgQSX2Jfg0KS7NUma/Wm8AwCnnW5Ney4U2fZoGjh6ejNy9uzKC04RCuSyniR7QhLzQfmvu99QQN5HLcFDgTxOTfRzHh+PpcDzN5gtEDAB4i8Nj2DfNs+l85GUF5VsXD0/TTewrkUq6JgOBvb6Rl+yvmYPqqVWN/XfyAwD0eTie0EwpxZ/zXbKoMHPhLGZNG+aZyz3xyGc3a+/yYASfbJqssS+BGcJE3cSej3tn9rP5Al/nvpMfrFRKHY6nG3K+F/Zygdre7cH6zLUcmGwgrEmBhyJez/wAtUNcyd446JXstQxfcV7N+TgYjHL8HE+mmPAt7OVZNUXnQ9nfBLJNk6bnRogHIRhMqPoWwLPHc77BWJk7yG7JnvVW6w1m+Nl8oYc7AKzWmzvZmzP3zl5wdVMvd4ynJscoF8Ar7cVd38JreVtx7Imx+Y6nZ47a7oDsMb7xk26RPZVxeG3P+ey6yEvMtrWur1DT9JVj702B3jQpthf2CajsylfYeRTqv8ko/cV9tyTY2MRkT5aw3+oGxD6O4/Fkiid8/OccDHeswTLD/n0kx6sv6Ye1psujWWd+23mVhDD1ro79Leej91HB/qP31H+IsKfoSJlCQAAAAABJRU5ErkJggg==" alt="">
+                        </p>
+
+                        <p class="nobottommargin">
+                          Grafische & technische Umsetzung</br>
+                          MXO MEDIA AG</br>
+                          Esslingerstraße 40</br>
+                          70182 Stuttgart</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- END MODAL -->
+
+              <li><a href="#" data-href="#wearemygym"><div>WE ARE MY GYM</div></a></li>
+              <li><a href="#" data-href="#membership"><div>MEMBERSHIP</div></a></li>
+              <li><a href="#" data-href="#specials"><div>SPECIALS</div></a></li>
+              <li><a href="#" data-href="#clubvr"><div>VR TOUR</div></a></li>
+              <li><a href="#" data-href="#news"><div>NEWS</div></a></li>
+              <li><a href="#" data-href="#contact"><div>ANFAHRT</div></a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+          <img src="{{logo}}">
+
+        </div>
+
+        <div class="col-md-4">
+
+          <div class="widget clearfix">
+            <h4 class="whitetext">Soziale Netzwerke</h4>
+
+            <div class="center topmargin-sm">
+              <a href="https://www.facebook.com/{{fb_id}}" target="_blank" class="social-icon inline-block noborder si-small si-facebook" title="Facebook">
+                <i class="icon-facebook"></i>
+                <i class="icon-facebook"></i>
+              </a>
+
+              <a href="https://plus.google.com/{{google_id}}/posts" target="_blank" class="social-icon inline-block noborder si-small si-twitter" title="Twitter">
+                <i class="icon-google-plus"></i>
+                <i class="icon-google-plus"></i>
+              </a>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</footer><!-- #footer end -->
 </body>
 </html>

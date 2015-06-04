@@ -11,18 +11,18 @@
       <div class="col_half nobottommargin topmargin-lg col_last">
 
         <!-- Start FAQs -->
-        <h2>{{title}}</h2>
+        <h2>{{{title}}}</h2>
 
         <div class="accordion accordion-border clearfix" data-state="closed">
             {{#each _embedded.6f50736a:faq}}
               <div class="acctitle"><i class="icon-question-sign"></i>{{question}}
               </div>
               <div class="acc_content clearfix">
-                {{answer}}
+                {{{answer}}}
               </div>
             {{/each}}
       </div>
-        <h3>{{subtitle}}</h3>
+        <h3>{{{subtitle}}}</h3>
     </div>
   </div>
 </section><!-- #membership end -->

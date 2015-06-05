@@ -4,7 +4,7 @@
   <div class="content-wrap" style="margin-bottom:0px;">
     <div class="container clearfix">
         {{#each _embedded.6f50736a:explain}}
-          <div class="col_one_fourth nobottommargin">
+          <div class="col_one_fourth nobottommargin {{#if @last}}col_last{{/if}}">
             <div class="feature-box fbox-center fbox-light fbox-effect nobottomborder">
               <div class="fbox-icon">
                 <a href="{{href}}"><i class="i-alt noborder icon-{{icon}}"></i></a>

@@ -92,7 +92,7 @@
 
     {{#each partials}}
       <div id="anchor_{{name}}">
-          {{> (lookup . 'name') parent=../ }}
+          {{> (lookup . 'name') parent=../parent }}
       </div>
     {{/each}}
 

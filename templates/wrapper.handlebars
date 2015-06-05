@@ -92,7 +92,7 @@
 
     {{#each partials}}
       <div id="anchor_{{name}}">
-          {{> (lookup . 'name') fb_id=fb_id }}
+          {{> (lookup . 'name') this }}
       </div>
     {{/each}}
 

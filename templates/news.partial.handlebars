@@ -18,19 +18,19 @@
         <!-- Posts
         ============================================= -->
         <div id="posts" class="post-grid post-masonry grid-3 clearfix">
-            {{#each _embedded.6f50736a:news}}
+            {{#each _embedded.6f50736a:articles}}
               <div class="entry clearfix">
                 <div class="entry-image">
-                  <img class="image_fade" src="{{teaserImage}}" alt="Standard Post with Image">
+                  <img class="image_fade" src="https://f.entrecode.de/{{coverImage}}" alt="Standard Post with Image">
                 </div>
                 <div class="entry-title">
-                  <h2>{{teaserTitle}}</h2>
+                  <h2>{{title}}</h2>
                 </div>
                 <ul class="entry-meta clearfix">
                   <li><i class="icon-calendar3"></i>{{date}}</li>
                 </ul>
                 <div class="entry-content">
-                    {{teaserText}}
+                    {{{text}}}
                   <a href="#" class="more-link" data-toggle="modal" data-target=".news-modal-{{@index}}">Weiterlesen</a>
 
                   <!-- MODAL START -->
@@ -40,16 +40,16 @@
                         <div class="modal-content">
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title">{{mainTitle}}</h4>
+                            <h4 class="modal-title">{{title}}</h4>
                           </div>
                           <div class="modal-body">
                             <div class="row">
                               <div class="col-md-6">
 
-                                <img src="{{mainImage}}"/>
+                                <img src="https://f.entrecode.de/{{coverImage}}"/>
                               </div>
                               <div class="col-md-6">
-                                  {{{mainText}}}
+                                  {{{text}}}
                               </div></div>
 
                           </div>
